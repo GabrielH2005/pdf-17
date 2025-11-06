@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Torna o site responsivo em diferentes tamanhos de tela -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Detalhes da Notícia | InvestNews</title>
+
+    <link rel="stylesheet" href="estilo.css">
+
+
+    <script src="bd.js"></script>
+
+ 
+    <script src="noticia.js"></script>
+
+    <!-- Script interno que carrega automaticamente os detalhes da notícia -->
+    <script defer>
+        // Quando a página for carregada...
+        window.onload = function() {
+            // Recupera o ID da notícia que foi salvo no localStorage
+            const id = localStorage.getItem("noticiaSelecionada");
+
+            const noticia = noticias.find(n => n.id == id);
+
+            // Se encontrou a notícia...
+            if (noticia) {
+                document.getElementById("titulo").innerText = noticia.titulo;
+                document.getElementById("imagem").src = noticia.imagem;
+                document.getElementById("fonte").innerText = "Fonte: " + noticia.fonte;
+                document.getElementById("resumo").innerText = noticia.resumo;
+                document.getElementById("data").innerText = "Publicado em: " + noticia.data;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>InvestNews</h1>
+    </header>
+    <main class="detalhes-container">
+
+        <h2 id="titulo"></h2>
+
+        <img id="imagem" alt="Imagem da notícia">
+        <p id="resumo"></p>
+        <p id="fonte"></p>
+        <p id="data"></p>
+        <a href="home.html" class="botao-voltar">Voltar</a>
+    </main>
+    <footer>
+        <p>InvestNews &copy; 2025 — Educação Financeira para Todos</p>
+    </footer>
+</body>
+</html>

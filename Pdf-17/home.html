@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+
+    <!--diferentes tamanhos  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | InvestNews</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="bd.js"></script>
+    <script src="noticia.js" defer></script>
+    <script src="menu-hamburguer.js" defer></script>
+</head>
+<body onload="carregarNoticias()">
+
+    <header>
+        <!-- Ícone do menu hamburguer (☰) visível em telas pequenas -->
+        <div class="menu-hamburguer" onclick="toggleMenu()">☰</div>
+        <h1>InvestNews</h1>
+        <nav id="menu">
+            <a href="home.html">Início</a>
+            <a href="index.html">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Últimas notícias sobre investimentos</h2>
+        <div id="lista-noticias" class="noticias-container"></div>
+    </main>
+    <footer>
+        <p>InvestNews &copy; 2025 — Educação Financeira para Todos</p>
+    </footer>
+</body>
+</html>
